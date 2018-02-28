@@ -11,11 +11,11 @@
 
 3) Use blastx to map the z.f. transcriptome to otherProteinDb
 For us this took ~1 day per species. Here's what we ran:
-blastx -query H_burtoni_rna.fa \
-	     -db ./db/Drer_Olat_Onil_Trub_ENS_pep \
-		   -out H_burtoni_rna_blastx_FISH_ENS_top1 \
-		   -outfmt '7' \
-		   -max_target_seqs 1
+blastx  -query H_burtoni_rna.fa \\\
+	-db ./db/Drer_Olat_Onil_Trub_ENS_pep \\\
+	-out H_burtoni_rna_blastx_FISH_ENS_top1 \\\
+	-outfmt '7' \\\
+	-max_target_seqs 1
 
 -Note: -outfmt and -max_target_seqs must be set to '7' and '1', respectively
 
