@@ -1,4 +1,6 @@
 # human_homologs_stepUp
+Below are basic steps for procedure we used to get human homologs for A.burtoni genes by stepping up through other better-annotated fish species.
+Most text is copied from email to ZB who was repeating the process starting with T.guttata (zebra finch)
 
 1) Get fasta files
 - z.f. transcriptome (ftp://ftp.ncbi.nlm.nih.gov/genomes/Taeniopygia_guttata/RNA/rna.fa.gz)
