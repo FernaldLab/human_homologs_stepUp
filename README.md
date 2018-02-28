@@ -11,13 +11,13 @@
 
 3) Use blastx to map the z.f. transcriptome to otherProteinDb
 For us this took ~1 day per species. Here's what we ran:
-#	blastx -query H_burtoni_rna.fa \
-#		   -db ./db/Drer_Olat_Onil_Trub_ENS_pep \
-#		   -out H_burtoni_rna_blastx_FISH_ENS_top1 \
-#		   -outfmt '7' \
-#		   -max_target_seqs 1
-#
-#          -outfmt and -max_target_seqs must be set to '7' and '1', respectively
+blastx -query H_burtoni_rna.fa \
+	     -db ./db/Drer_Olat_Onil_Trub_ENS_pep \
+		   -out H_burtoni_rna_blastx_FISH_ENS_top1 \
+		   -outfmt '7' \
+		   -max_target_seqs 1
+
+-Note: -outfmt and -max_target_seqs must be set to '7' and '1', respectively
 
 4)  Parse the blastx results
 Use parseBestHitBlastxResultsWithComments_betterMatchingJan2016.py, the arguments are described in the script. There will be 5 output files, one with a name ending in "topByTranscript" that I'll call "originalBlastx.topByTranscript". The columns of this file are described in the script, but basically they'll be z.f. gene id, z.f. transcript id, the protein id of the best hit for that transcript from otherProteinDb, full z.f. gene description, and the blastx bit score. 
