@@ -22,10 +22,10 @@ blastx  -query H_burtoni_rna.fa \\\
 -Note: -outfmt and -max_target_seqs must be set to '7' and '1', respectively
 
 4)  Parse the blastx results
-Use parseBestHitBlastxResultsWithComments_betterMatchingJan2016.py, the arguments are described in the script. There will be 5 output files, one with a name ending in "topByTranscript" that I'll call "originalBlastx.topByTranscript". The columns of this file are described in the script, but basically they'll be z.f. gene id, z.f. transcript id, the protein id of the best hit for that transcript from otherProteinDb, full z.f. gene description, and the blastx bit score. 
+Use 1_parseBestHitBlastxResultsWithComments_betterMatchingJan2016.py, the arguments are described in the script. There will be 5 output files, one with a name ending in "topByTranscript" that I'll call "originalBlastx.topByTranscript". The columns of this file are described in the script, but basically they'll be z.f. gene id, z.f. transcript id, the protein id of the best hit for that transcript from otherProteinDb, full z.f. gene description, and the blastx bit score. 
 
 5) Create a fasta of protein sequences from the hits in originalBlastx.topByTranscript
-I don't have one script to do this, but if you make a text file of just the protein ids in column 3 of originalBlastx.topByTranscript you can use ENSid_toFasta.py to create a protein fasta file. If otherProteinDb contained more than one species you'll need to do this separately for each species then cat the fasta files together into a file I'll call "proteinBestHit.fa".
+I don't have one script to do this, but if you make a text file of just the protein ids in column 3 of originalBlastx.topByTranscript you can use 1b_ENSid_toFasta.py to create a protein fasta file. If otherProteinDb contained more than one species you'll need to do this separately for each species then cat the fasta files together into a file I'll call "proteinBestHit.fa".
 
 6) Use blastp to map proteinBestHit.fa to zfProteinDb
 If hits from originalBlastx.topByTranscript map back to the proteins made by the original z.f. mRNAs then they're likely homologs. 
