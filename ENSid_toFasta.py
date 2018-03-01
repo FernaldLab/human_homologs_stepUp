@@ -1,15 +1,8 @@
 #! /usr/bin/python
-
 #Input: FASTA file name
 # Searches a FASTA file for a pattern (from a file with an ID on each line) and prints the corresponding fasta entry to a new file. 
-
-
 import sys, Bio
-
-
 from Bio import SeqIO
-
-
 
 fastaFile = sys.argv[1]
 ids_file = sys.argv[2]
@@ -30,14 +23,6 @@ for seq_record in SeqIO.parse(fastaFile, "fasta"):
 	else:
 		continue
 
-
-
-			
 output_file = open(newfile, "w")
 SeqIO.write(HitFastaRecord, newfile, "fasta")
 output_file.close()
-
-
-
-
-
